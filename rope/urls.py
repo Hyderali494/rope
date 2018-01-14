@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from rope_admin import views as rope_views
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'$',rope_views.showLogin),
     url(r'user_login/', rope_views.user_login),
     url(r'showLogin/',rope_views.showLogin),
 ]
