@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'rope.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ROPE',
+        'NAME': 'rope_admin',
 	'USER': 'root',
-	'PASSWORD': '123'
+	'PASSWORD': 'imran494@'
     }
 }
 
@@ -119,5 +119,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 STATIC_URL = '/static/'

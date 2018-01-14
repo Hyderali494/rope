@@ -1,12 +1,22 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 from django.http import HttpResponse
-
+def showLogin(request):
+    return render(request, 'index.html') 
 # Create your views here.
+def getLogin(request):
+    name = request.POST['name']
+    pwd = request.POST['pwd']
+    if name and pwd:
+        user = Register.objects.filter(username= name,password = pwd)
+        if user:
+            return HttpResponse("Dashboard")
+        else:
+            return HttpResponse("Please register now")
+    else:
+        return HttpResponse("Please Enter both Username & Password")
 
-
-def user_login(request):
-    print request
     return HttpResponse("Success")
+def user_login(request):
+    return HttpResponse("sucess")

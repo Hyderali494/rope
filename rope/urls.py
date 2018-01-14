@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from rope_admin import views as rope_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'user_login/', rope_views.user_login),
+    url(r'showLogin/',rope_views.showLogin),
 ]
+
